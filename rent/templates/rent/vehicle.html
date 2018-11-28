@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}{{ vehicle }}{% endblock %}
+
+{% block content %}
+    {% block nav %}{{ block.super }}{% endblock %}
+
+<h1>{{ vehicle }}</h1>
+<form>
+    <div class="form-group-row">
+        <label>Type</label>
+        <div class="col-sm-10">
+            <p>{{ vehicle.vehicle_type.name }}</p>
+        </div>
+    </div>
+    <div class="form-group-row">
+        <label>Size</label>
+        <div class="col-sm-10">
+            <p>{{ vehicle.vehicle_size.name }}</p>
+        </div>
+    </div>
+    <div class="form-group-row">
+        <label>Real Cost</label>
+        <div class="col-sm-10">
+            <p>{{ vehicle.real_cost }}</p>
+        </div>
+    </div>
+    <div class="form-group-row">
+        <label>Date Created</label>
+        <div class="col-sm-10">
+            <p>{{ vehicle.date_created|timesince }} ago</p>
+        </div>
+    </div>
+</form>
+{% endblock %}

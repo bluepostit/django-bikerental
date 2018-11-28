@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    {% block nav %}{{ block.super }}{% endblock %}
+
+<h1>{{ title }}</h1>
+{% if not vehicles %}
+        <h3>There are no vehicles!</h3>
+{% else %}
+<div class="list-group customers_pane">
+    {% for vehicle in vehicles %}
+        <a href="{% url 'rent:vehicle' vehicle.id %}" class="list-group-item list-group-item-action customer">
+            {{ vehicle }}
+        </a>
+    {% endfor %}
+</div>
+{% endif %}
+
+
+{% endblock %}

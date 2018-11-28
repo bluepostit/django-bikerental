@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}{{ customer }}{% endblock %}
+
+{% block content %}
+    {% block nav %}{{ block.super }}{% endblock %}
+
+<h1>{{ customer }}</h1>
+<form>
+    <div class="form-group-row">
+        <label for="address" class="col-sm-2 col-form-label">Address</label>
+        <div class="col-sm-10">
+            <p>
+                {{ customer.address }}<br>
+                {{ customer.city }}<br>
+                {{ customer.country }}
+            </p>
+        </div>
+    </div>
+    <div class="form-group-row">
+        <label for="phone">Phone</label>
+        <div class="col-sm-10">
+            <p>{{ customer.phone }}</p>
+        </div>
+    </div>
+    <div class="form-group-row">
+        <label for="email">Email</label>
+        <div class="col-sm-10">
+            <p>{{ customer.email }}</p>
+        </div>
+    </div>
+</form>
+{% endblock %}

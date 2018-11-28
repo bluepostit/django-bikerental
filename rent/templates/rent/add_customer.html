@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}{{ 'Add Customer' }}{% endblock %}
+
+{% block content %}
+    {% block nav %}{{ block.super }}{% endblock %}
+
+<h1>{{ 'Add Customer' }}</h1>
+<form method="post">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit">
+</form>
+
+{% endblock %}

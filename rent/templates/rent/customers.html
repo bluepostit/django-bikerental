@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    {% block nav %}{{ block.super }}{% endblock %}
+
+<h1>{{ title }}</h1>
+{% if not customers %}
+    <h3>There are no customers!</h3>
+{% else %}
+<div class="list-group customers_pane">
+    {% for customer in customers %}
+        <a href="{% url 'rent:customer' customer.id %}" class="list-group-item list-group-item-action customer">
+            {{ customer }}
+        </a>
+    {% endfor %}
+</div>
+{% endif %}
+
+{% endblock %}
