@@ -104,4 +104,4 @@ venv.bak/
 .mypy_cache/
 
 .idea/
-./bikerental/test
+bikerental/test
